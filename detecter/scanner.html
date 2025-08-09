@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Scan Barcode</title>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+    <h2>Scan the Tablet Barcode</h2>
+    <div id="reader" style="width: 300px; margin: auto;"></div>
+    <script>
+        function onScanSuccess(decodedText) {
+            window.location.href = "tablet-info.html?code=" + decodedText;
+        }
+        new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 }).render(onScanSuccess);
+    </script>
+</body>
+</html>

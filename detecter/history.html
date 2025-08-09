@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Scan History</h2>
+    <ul id="history-list"></ul>
+    <script>
+        const history = JSON.parse(localStorage.getItem('history')) || [];
+        const list = document.getElementById('history-list');
+        history.forEach(code => {
+            const li = document.createElement('li');
+            li.textContent = code;
+            list.appendChild(li);
+        });
+    </script>
+</body>
+</html>

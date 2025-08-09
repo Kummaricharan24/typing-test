@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tablet Info</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h2>Tablet Information</h2>
+    <div id="info">Tablet Info Will Show Here</div>
+
+    <select id="lang-select">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="te">Telugu</option>
+    </select>
+    <button onclick="displayTabletInfo()">Show Info</button>
+    <button onclick="setAlarm()">Set Alarm (1 min demo)</button>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+
+        function displayTabletInfo() {
+            const lang = document.getElementById('lang-select').value;
+            showTabletInfo(code, lang);
+        }
+    </script>
+</body>
+</html>
